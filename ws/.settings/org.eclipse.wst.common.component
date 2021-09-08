@@ -11,6 +11,9 @@
         <dependent-module archiveName="entidades-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/entidades/entidades">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="commons-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commons/commons">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="ws"/>
         <property name="java-output-path" value="/ws/target/classes"/>
     </wb-module>

@@ -27,5 +27,11 @@
 			<artifactId>entidades</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.cmc.rest</groupId>
+			<artifactId>commons</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 </project>
