@@ -5,17 +5,23 @@ public class Persona {
 	private String cedula;
 	private String nombre;
 	private String apellido;
+	private int edad;
 	
 	public Persona() {
 		
 	}
 	
-	public Persona(String cedula, String nombre, String apellido) {
+	
+
+	public Persona(String cedula, String nombre, String apellido, int edad) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.edad = edad;
 	}
+
+
 
 	public String getCedula() {
 		return cedula;
@@ -41,10 +47,26 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
+
+
+	public int getEdad() {
+		return edad;
+	}
+
+
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Persona [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + "]";
+		return "Persona [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";
 	}
+
+	
 	
 	
 }

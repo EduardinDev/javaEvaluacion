@@ -9,7 +9,7 @@ public class TestActualizar {
 	public static void main(String[] args) {
 		
 		
-		Persona persona = new Persona("1002003000","Eduardo","Olivo");
+		Persona persona = new Persona("1002003000","Eduardo","Olivo",23);
 		try {
 			System.out.println(ServicioPersonas.actualizar(persona));
 		} catch (ValidationException e) {
