@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 import com.prueba.rest.commons.ArchivoException;
 import com.prueba.rest.commons.DateUtil;
 import com.prueba.rest.commons.ValidationException;
+import com.prueba.rest.entidades.Consulta;
 import com.prueba.rest.entidades.Persona;
 import com.prueba.rest.servicios.ManejadorArchivos;
 import com.prueba.rest.servicios.ServicioPersonas;
@@ -77,5 +78,24 @@ public class PersonaRest {
 			//logger.error("El sistema está dormido ", ex);
 			return Response.status(200).entity(ex.getMessage()).build();
 		}
+	}
+	
+	
+	@Path("/buscarPorCedula")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response buscarPorCedula(Consulta consulta){
+		try {
+			System.out.println("cedula "+consulta.getCedula());
+			Persona persona = ServicioPersonas.buscarPorCedula(consulta.getCedula());
+			return Response.status(200).entity(persona).build();
+		} catch (ArchivoException e) {
+			return Response.status(200).entity(e.getMessage()).build();
+		}catch (Exception ex) {
+			//logger.error("El sistema está dormido ", ex);
+			return Response.status(200).entity(ex.getMessage()).build();
+		}
+			
 	}
 }
