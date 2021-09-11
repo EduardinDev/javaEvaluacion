@@ -10,13 +10,13 @@
   	<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
   	<init-param>
   		<param-name>jersey.config.server.provider.packages</param-name>
-  		<param-value>com.prueba.servicios</param-value>
+  		<param-value>com.cmc.rest.servicios</param-value>
   	</init-param>
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>Servlet Evaluacion</servlet-name>
-  	<url-pattern>/evaluacionrs/*</url-pattern>
+  	<url-pattern>/evaljava/*</url-pattern>
   </servlet-mapping>
   
 </web-app>
