@@ -98,4 +98,23 @@ public class PersonaRest {
 		}
 			
 	}
+	
+	
+	@Path("/guardarPersona")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public static Response guardarPersona(Persona persona){
+		System.out.println(persona);
+		ManejadorArchivos ma = new ManejadorArchivos("personas.txt");
+		try {
+			ma.guardarPersona(persona);
+			ArrayList<Persona> personas=ma.leer();
+			return Response.status(200).entity(personas).build();
+			
+		} catch (Exception ex) {
+			//logger.error("El sistema está dormido ", ex);
+			return Response.status(200).entity(ex.getMessage()).build();
+		}
+	}
 }
