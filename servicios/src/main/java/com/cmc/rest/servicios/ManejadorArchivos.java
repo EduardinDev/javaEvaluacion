@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import com.cmc.rest.entidades.Persona;
 import com.prueba.rest.commons.ArchivoException;
+import com.prueba.rest.commons.DateUtil;
 
 public class ManejadorArchivos {
 	
@@ -18,7 +20,7 @@ public class ManejadorArchivos {
 		this.rutaArchivo = rutaArchivo;
 	}
 	
-	public ArrayList<Persona> leer() throws ArchivoException{
+	public ArrayList<Persona> leer() throws ArchivoException, NumberFormatException, ParseException{
 		File file = new File(rutaArchivo);	
 		BufferedReader br=null;
 		FileReader fileReader=null;
@@ -32,7 +34,8 @@ public class ManejadorArchivos {
 			
 			while ((linea=br.readLine())!=null) {
 				partes=linea.split("-");
-				p = new Persona(partes[2],partes[0],partes[1],Integer.parseInt(partes[3]));
+				p = new Persona(partes[2],partes[0],partes[1],Integer.parseInt(partes[3]),
+						DateUtil.convertir(DateUtil.convertirDate(partes[4])));
 				personas.add(p);
 			}
 			

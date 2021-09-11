@@ -13,19 +13,26 @@ public class Persona {
 	private String apellido;
 	private int edad;
 	private String fechaCreacion=DateUtil.convertir().toString(); //necesario para que se ejecute en el servidor
+	private String fechaNacimiento;
 	
 	public Persona() {
 		
 	}
 
-	public Persona(String cedula, String nombre, String apellido, int edad) {
+	
+
+	public Persona(String cedula, String nombre, String apellido, int edad,
+			String fechaNacimiento) {
 		super();
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
 		this.fechaCreacion = DateUtil.convertir().toString();
+		this.fechaNacimiento = fechaNacimiento;
 	}
+
+
 
 	public String getCedula() {
 		return cedula;
@@ -67,11 +74,29 @@ public class Persona {
 		this.fechaCreacion = fechaCreacion;
 	}
 
+	
+
+
+	public String getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+
+
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Persona [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad
-				+ ", fechaCreacion=" + fechaCreacion + "]";
+				+ ", fechaCreacion=" + fechaCreacion + ", fechaNacimiento=" + fechaNacimiento + "]";
 	}
+
+	
+	
 	
 	
 

@@ -1,5 +1,6 @@
 package com.cmc.rest.servicios;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import com.cmc.rest.entidades.Persona;
@@ -31,7 +32,7 @@ public class ServicioPersonas {
 	}
 	
 	
-	public static Persona buscarPorCedula(String cedula) throws ArchivoException{
+	public static Persona buscarPorCedula(String cedula) throws ArchivoException, NumberFormatException, ParseException{
 		ManejadorArchivos manejador = new ManejadorArchivos("personas.txt");
 		ArrayList<Persona> personas = manejador.leer();
 		
